@@ -1,0 +1,7 @@
+{
+  "name": "FreeBet",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
