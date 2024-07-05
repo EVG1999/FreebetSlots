@@ -1,4 +1,4 @@
-System.register(["./main-legacy-C1LDZYNw.js"],(function(o,e){"use strict";var t;return{setters:[o=>{t=o.a}],execute:function(){
+System.register(["./main-legacy-BzfvbKnC.js"],(function(o,e){"use strict";var t;return{setters:[o=>{t=o.a}],execute:function(){
 /*!
              * (C) Ionic http://ionicframework.com - MIT License
              */
