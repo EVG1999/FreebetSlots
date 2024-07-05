@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'FreeBet',
+  appId: 'com.slots.freebet',
+  appName: 'Freebet Slots',
   webDir: 'dist'
 };
 

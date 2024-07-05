@@ -1,22 +1,60 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonAccordion, IonAccordionGroup, IonItem, IonLabel, IonList } from '@ionic/react';
 import './Tab3.css';
 
 const Tab3: React.FC = () => {
+  const infoSections = [
+    {
+      name: 'Как работают букмекерские конторы',
+      description: 'Букмекерские конторы предоставляют платформу для размещения ставок на спортивные события и другие мероприятия.',
+      details: 'Букмекеры устанавливают коэффициенты на различные исходы событий, используя анализ данных и статистику. Коэффициенты отражают вероятность конкретного исхода. Когда игрок делает ставку, букмекер принимает ее и выплачивает выигрыш в случае удачи, либо оставляет ставку себе в случае проигрыша. Современные букмекерские конторы используют сложные алгоритмы для управления рисками и обеспечения прибыли.',
+    },
+    {
+      name: 'Типы ставок',
+      description: 'Существует множество типов ставок, которые можно сделать в букмекерских конторах.',
+      details: 'Основные типы ставок включают ставки на победителя матча, тоталы (общее количество голов или очков), форы (гандикапы), а также ставки на конкретные события в матче (например, кто забьет первый гол). Каждый тип ставки имеет свои особенности и коэффициенты, которые рассчитываются букмекером на основе вероятности исхода.',
+    },
+    {
+      name: 'Коэффициенты и как их понимать',
+      description: 'Коэффициенты являются важной частью ставок, так как они определяют потенциальный выигрыш.',
+      details: 'Коэффициенты выражаются в различных форматах, таких как десятичные, дробные и американские. Десятичные коэффициенты показывают, сколько вы выиграете за каждую поставленную единицу валюты. Например, коэффициент 2.00 означает, что за каждые поставленные 100 рублей вы получите 200 рублей в случае выигрыша (включая вашу ставку).',
+    },
+    {
+      name: 'Ответственная игра',
+      description: 'Ответственная игра - это ключевой аспект ставок, который помогает предотвратить азартные зависимости.',
+      details: 'Букмекерские конторы предлагают различные инструменты для обеспечения ответственной игры, включая лимиты на ставки и время, проведенное на платформе, а также возможности самоисключения. Игрокам рекомендуется устанавливать личные ограничения и быть осведомленными о признаках проблемной игры.',
+    },
+  ];
+
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab 3</IonTitle>
+          <IonTitle>Ифнормация</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Tab 3</IonTitle>
+            <IonTitle size="large">Информация</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Tab 3 page" />
+        <IonAccordionGroup>
+          {infoSections.map((section, index) => (
+            <IonAccordion value={String(index)} key={index}>
+              <IonItem slot="header" color="light">
+                <IonLabel>{section.name}</IonLabel>
+              </IonItem>
+              <IonList slot="content">
+                <IonItem>
+                  <IonLabel>{section.description}</IonLabel>
+                </IonItem>
+                <IonItem>
+                  <IonLabel>{section.details}</IonLabel>
+                </IonItem>
+              </IonList>
+            </IonAccordion>
+          ))}
+        </IonAccordionGroup>
       </IonContent>
     </IonPage>
   );
